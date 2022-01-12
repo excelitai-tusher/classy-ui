@@ -1,7 +1,9 @@
+import 'package:classy_ui_design/order/body.dart';
 import 'package:flutter/material.dart';
 import 'order/my order.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
