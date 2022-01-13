@@ -1,4 +1,3 @@
-
 import 'package:classy_ui_design/constant.dart';
 import 'package:classy_ui_design/model/item%20description.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,7 +13,6 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   List<String> category = ["Delivered", "Processing", "Cancelled"];
-  List names = [Item.list,];
   var selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -80,57 +78,9 @@ class _BodyState extends State<Body> {
 
 Widget item(){
   List names = [Item.list,];
-
   return SizedBox(
-    height: 500,
+    height: 30,
     child: ListView.separated(
-      separatorBuilder: (context, index) {
-        return SizedBox(
-          height: 300,
-          width: 200,
-          child: Column(
-            children: [
-              SizedBox(height: 10,),
-              Container(
-                height: 160,
-                width: 360,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 1,
-                      blurRadius: 3,
-                      offset: Offset(0, 1), // changes position of shadow
-                    ),
-                  ],
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      ListView(
-                        children: [
-                          Card(
-                              child: ListTile(
-                                title:Text(names.toString()) ,
-                              )
-                          ),
-                        ],
-                        shrinkWrap: true,
-                        reverse: true,
-                        padding: EdgeInsets.all(10),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
       shrinkWrap: true,
       //scrollDirection: Axis.horizontal,
       itemCount: Item.list.length,
@@ -138,6 +88,29 @@ Widget item(){
         Item product= Item.list[i];
         return  item();
       },
+      separatorBuilder: (context, index) {
+        return ListView(
+          children: [
+             SingleChildScrollView(
+               child: Column(
+                children: [
+                  SizedBox(height: 10,),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: ListTile(
+                        title:Text(names.toString()) ,
+                      ),
+                    ),
+                  ),
+                ],
+            ),
+             ),
+          ],
+
+        );
+      },
+
     ),
   );
 }
