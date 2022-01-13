@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'my order.dart';
+
 class Body extends StatefulWidget {
   const Body({Key? key, }) : super(key: key);
 
@@ -20,7 +22,7 @@ class _BodyState extends State<Body> {
       child: Column(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height/ 9,
+            height: MediaQuery.of(context).size.height/ 10,
             width: MediaQuery.of(context).size.width,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -30,6 +32,7 @@ class _BodyState extends State<Body> {
           ),
 
           item(),
+          Order(),
         ],
       ),
     );
@@ -73,44 +76,85 @@ class _BodyState extends State<Body> {
      );
    }
 
-
-}
-
-Widget item(){
-  List names = [Item.list,];
-  return SizedBox(
-    height: 30,
-    child: ListView.separated(
+  Widget item(){
+    return ListView.separated(
       shrinkWrap: true,
-      //scrollDirection: Axis.horizontal,
+      scrollDirection: Axis.vertical,
       itemCount: Item.list.length,
       itemBuilder: (BuildContext context, i) {
         Item product= Item.list[i];
-        return  item();
-      },
-      separatorBuilder: (context, index) {
-        return ListView(
-          children: [
-             SingleChildScrollView(
-               child: Column(
+        return Container(
+          height: 120,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Card(
+              color: Colors.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(height: 10,),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Card(
-                      child: ListTile(
-                        title:Text(names.toString()) ,
+                    padding: const EdgeInsets.all(15.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text("Item name: ", style: TextStyle(color: Colors.black),
+                          ),
+                          Text(product.ItemName.toString(), style: TextStyle(color: Colors.black38)),
+                        ],
                       ),
+                      Row(
+                        children: [
+                          Text("Order No: ", style: TextStyle(color: Colors.black),
+                          ),
+                          Text(product.OrderNo.toString(), style: TextStyle(color: Colors.black38)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("Quantity: ", style: TextStyle(color: Colors.black),
+                          ),
+                          Text(product.Quantity.toString(), style: TextStyle(color: Colors.black38)),
+                        ],
+                      ),
+                    ],
+                 ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(product.Date.toString()),
+                        Row(
+                          children: [
+                            Text("Total Amount: ", style: TextStyle(color: Colors.black),
+                            ),
+                            Text(product.TotalAmount.toString(), style: TextStyle(color: Colors.black38)),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text("Status: ", style: TextStyle(color: Colors.black),
+                            ),
+                            Text(product.Status.toString(), style: TextStyle(color: Colors.green)),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ],
+              ),
             ),
-             ),
-          ],
-
-        );
+           ),
+         );
+        },
+      separatorBuilder: (context, index) {
+        return SizedBox(width: 3,);
       },
-
-    ),
-  );
+    );
+  }
 }
+
