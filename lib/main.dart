@@ -3,9 +3,11 @@ import 'package:classy_ui_design/order/body.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'order/cancel.dart';
+import 'map/location.dart';
 import 'order/my order.dart';
 import 'package:shelf_proxy/shelf_proxy.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart';
 
 void main() {
   WidgetInspectorService.instance.performReassemble();
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Order()
+      home: MapSample()
     );
   }
 }
