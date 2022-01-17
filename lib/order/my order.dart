@@ -61,7 +61,7 @@ class _OrderState extends State<Order> {
                 children: [
                   Icon(
                     (Icons.shopping_cart),
-                    color: Colors.red,
+                    color: Colors.orange,
                   ),
                   Text(
                     "Cart",
