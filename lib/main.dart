@@ -4,11 +4,12 @@ import 'package:classy_ui_design/address/shipping%20address.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'address/payment.dart';
 import 'map/location.dart';
+import 'map/map2.dart';
 import 'order/my order.dart';
-import 'package:shelf_proxy/shelf_proxy.dart';
-
 import 'order/order accepted.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
   WidgetInspectorService.instance.performReassemble();
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: OrderAccepted()
+      home: MapPage()
     );
   }
 }
+

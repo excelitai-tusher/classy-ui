@@ -14,7 +14,7 @@ class Item{
       OrderNo: "7597",
       Quantity: "05",
       Date: "14th January, 2020",
-      TotalAmount: "2103",
+      TotalAmount: "\$2103",
       Status: "Delivered",
     ),
     Item(
@@ -22,7 +22,7 @@ class Item{
       OrderNo: "7597",
       Quantity: "05",
       Date: "14th January, 2020",
-      TotalAmount: "2103",
+      TotalAmount: "\$2103",
       Status: "Delivered",
     ),
     Item(
@@ -30,7 +30,7 @@ class Item{
       OrderNo: "7597",
       Quantity: "05",
       Date: "14th January, 2020",
-      TotalAmount: "2103",
+      TotalAmount: "\$2103",
       Status: "Delivered",
     ),
     Item(
@@ -38,7 +38,7 @@ class Item{
       OrderNo: "7597",
       Quantity: "05",
       Date: "14th January, 2020",
-      TotalAmount: "2103",
+      TotalAmount: "\$2103",
       Status: "Delivered",
     ),
     Item(
@@ -46,7 +46,7 @@ class Item{
       OrderNo: "7597",
       Quantity: "05",
       Date: "14th January, 2020",
-      TotalAmount: "2103",
+      TotalAmount: "\$2103",
       Status: "Delivered",
     ),
   ];
