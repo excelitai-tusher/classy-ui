@@ -38,8 +38,7 @@ dependencies:
   http:
   provider:
   font_awesome_flutter: ^9.2.0
-  geocoder: ^0.2.1
-  geolocator:
+  location: ^4.3.0
 
 
 dev_dependencies:

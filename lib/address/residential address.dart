@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Residential extends StatefulWidget {
   const Residential({Key? key}) : super(key: key);
@@ -8,6 +10,38 @@ class Residential extends StatefulWidget {
 }
 
 class _ResidentialState extends State<Residential> {
+  Completer<GoogleMapController> _controller = Completer();
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(37.42796133580664, -122.085749655962),
+    zoom: 14.4746,
+  );
+
+  static final CameraPosition _kLake = CameraPosition(
+    bearing: 192.8334901395799,
+    target: LatLng(23.748419032382532, 90.40278648441169),
+    tilt: 59.440717697143555,
+    zoom: 19.151926040649414,
+  );
+  static final Marker _kGooglePlexMarker = Marker(markerId:
+  MarkerId('_kGooglePlex'),
+    infoWindow: InfoWindow(title: 'Google Plex'),
+    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+    position: LatLng(23.748419032382532, 90.40278648441169),
+  );
+  static final Marker _kLakeMarker = Marker(
+    markerId: MarkerId('_kLakeMarker'),
+    infoWindow: InfoWindow(title: 'Lake'),
+    icon: BitmapDescriptor.defaultMarker,
+    position: LatLng(23.74841903230755, 90.40278648414726),
+  );
+  static final Polyline _kPolyline = Polyline(
+      polylineId: PolylineId('_kPolyline'),
+      points: [
+        LatLng(23.74841903230755, 90.40278648414726),
+        LatLng(23.74841903230755, 90.40278648414726),
+      ]
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,113 +53,122 @@ class _ResidentialState extends State<Residential> {
           size: 18,
           color: Colors.black,
         ),
-        title: Text("Residential Address",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 18,
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 35),
+          child: Text("Residential Address",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+            ),
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
-          child: Column(
-            children: [
-              Text("Please Enter Your Current Address",
-              style: TextStyle(
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
-                fontSize: 18
-              ),
-              ),
-              SizedBox(height: 30,),
-              Container(
-                height: 70,
-                width: 300,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: new BorderRadius.circular(10.0),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 50,),
+        child: Column(
+          children: [
+            Text("Please Enter Your Current Address",
+            style: TextStyle(
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+              fontSize: 18
+            ),
+            ),
+            SizedBox(height: 30,),
+            TextField(
+              decoration: InputDecoration(
+                focusColor: Colors.grey,
+                fillColor: Colors.grey,
+                hoverColor: Colors.grey,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey, width: 2.0),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        labelText: "Street address & city"
-                    ),
+                hintText: 'Street address & city',
+                hintStyle: TextStyle(fontSize: 12.0, color: Colors.grey),
+              ),
+            ),
+            SizedBox(height: 20,),
+            TextField(
+              decoration: InputDecoration(
+                focusColor: Colors.grey,
+                fillColor: Colors.grey,
+                hoverColor: Colors.grey,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                ),
+                hintText: 'Apt, suite #',
+                hintStyle: TextStyle(fontSize: 12.0, color: Colors.grey),
+              ),
+            ),
+            SizedBox(height: 20,),
+            TextField(
+              decoration: InputDecoration(
+                focusColor: Colors.grey,
+                fillColor: Colors.grey,
+                hoverColor: Colors.grey,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                ),
+                hintText: 'Post Code',
+                hintStyle: TextStyle(fontSize: 12.0, color: Colors.grey),
+              ),
+            ),
+            SizedBox(height: 35,),
+            Column(
+              children: [
+                SizedBox(
+                  height: 300,
+                  width: 300,
+                  child: GoogleMap(
+                    mapType: MapType.normal,
+                    markers: {
+                      _kGooglePlexMarker,
+                      _kLakeMarker,
+                    },
+                    polylines: {
+                      _kPolyline,
+                    },
+                    initialCameraPosition: _kGooglePlex,
+                    onMapCreated: (GoogleMapController controller) {
+                      _controller.complete(controller);
+                    },
                   ),
                 ),
-              ),
-              SizedBox(height: 20,),
-              Container(
-                height: 70,
-                width: 300,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: new BorderRadius.circular(10.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      //fillColor: Colors.grey,
-                        border: InputBorder.none,
-                        labelText: "Apt,suite #"
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
-              Container(
-                height: 70,
-                width: 300,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: new BorderRadius.circular(10.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        border: InputBorder.none,
-                        labelText: "Post Code"
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 150),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.orange,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ),
-                        onPressed: (){},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Save Address",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 22,
-                              ),
-                            ),
-                          ],
+              ],
+            ),
+
+            SizedBox(
+              width: 200,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 30),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.orange,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
+                      onPressed: (){},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Save Address",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

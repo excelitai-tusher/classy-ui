@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Payment extends StatefulWidget {
   const Payment({Key? key}) : super(key: key);
@@ -8,6 +10,38 @@ class Payment extends StatefulWidget {
 }
 
 class _PaymentState extends State<Payment> {
+  Completer<GoogleMapController> _controller = Completer();
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(37.42796133580664, -122.085749655962),
+    zoom: 14.4746,
+  );
+
+  static final CameraPosition _kLake = CameraPosition(
+    bearing: 192.8334901395799,
+    target: LatLng(23.748419032382532, 90.40278648441169),
+    tilt: 59.440717697143555,
+    zoom: 19.151926040649414,
+  );
+  static final Marker _kGooglePlexMarker = Marker(markerId:
+  MarkerId('_kGooglePlex'),
+    infoWindow: InfoWindow(title: 'Google Plex'),
+    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+    position: LatLng(23.748419032382532, 90.40278648441169),
+  );
+  static final Marker _kLakeMarker = Marker(
+    markerId: MarkerId('_kLakeMarker'),
+    infoWindow: InfoWindow(title: 'Lake'),
+    icon: BitmapDescriptor.defaultMarker,
+    position: LatLng(23.74841903230755, 90.40278648414726),
+  );
+  static final Polyline _kPolyline = Polyline(
+      polylineId: PolylineId('_kPolyline'),
+      points: [
+        LatLng(23.74841903230755, 90.40278648414726),
+        LatLng(23.74841903230755, 90.40278648414726),
+      ]
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +102,21 @@ class _PaymentState extends State<Payment> {
                         offset: Offset(0, 8), // Shadow position
                       ),
                     ],
+                  ),
+
+                  child:  GoogleMap(
+                    mapType: MapType.normal,
+                    markers: {
+                      _kGooglePlexMarker,
+                      _kLakeMarker,
+                    },
+                    polylines: {
+                      _kPolyline,
+                    },
+                    initialCameraPosition: _kGooglePlex,
+                    onMapCreated: (GoogleMapController controller) {
+                      _controller.complete(controller);
+                    },
                   ),
                 ),
               ),
