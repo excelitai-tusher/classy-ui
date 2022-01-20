@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:classy_ui_design/order/order%20accepted.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -49,9 +50,14 @@ class _ResidentialState extends State<Residential> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios,
-          size: 18,
-          color: Colors.black,
+        leading: InkWell(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_back_ios,
+            size: 18,
+            color: Colors.black,
+          ),
         ),
         title: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 35),
@@ -64,7 +70,7 @@ class _ResidentialState extends State<Residential> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 50,),
+        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
         child: Column(
           children: [
             Text("Please Enter Your Current Address",
@@ -150,7 +156,9 @@ class _ResidentialState extends State<Residential> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const OrderAccepted()));
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

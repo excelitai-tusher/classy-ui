@@ -1,3 +1,4 @@
+import 'package:classy_ui_design/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -33,7 +34,9 @@ class _OrderAcceptedState extends State<OrderAccepted> {
                 children: [
                   IconButton(
                     icon: Icon(FontAwesomeIcons.chevronCircleLeft, color: Colors.white,),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
                    Padding(
                      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 50),
@@ -107,7 +110,9 @@ class _OrderAcceptedState extends State<OrderAccepted> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>MapSample()));
+                },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

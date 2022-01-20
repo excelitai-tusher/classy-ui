@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:classy_ui_design/address/residential%20address.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -49,9 +50,14 @@ class _PaymentState extends State<Payment> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: Icon(Icons.arrow_back_ios,
-          size: 18,
-          color: Colors.black,
+        leading: InkWell(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_back_ios,
+            size: 18,
+            color: Colors.black,
+          ),
         ),
         title: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50),
@@ -289,7 +295,9 @@ class _PaymentState extends State<Payment> {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) =>Residential()));
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

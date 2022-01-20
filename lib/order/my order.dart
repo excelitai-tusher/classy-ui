@@ -1,3 +1,4 @@
+import 'package:classy_ui_design/address/shipping%20address.dart';
 import 'package:classy_ui_design/order/body.dart';
 import 'package:flutter/material.dart';
 
@@ -57,17 +58,22 @@ class _OrderState extends State<Order> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: Column(
-                children: [
-                  Icon(
-                    (Icons.shopping_cart),
-                    color: Colors.orange,
-                  ),
-                  Text(
-                    "Cart",
-                    style: TextStyle(color: Colors.black, fontSize: 14),
-                  ),
-                ],
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>Shipping()));
+                },
+                child: Column(
+                  children: [
+                    Icon(
+                      (Icons.shopping_cart),
+                      color: Colors.orange,
+                    ),
+                    Text(
+                      "Cart",
+                      style: TextStyle(color: Colors.black, fontSize: 14),
+                    ),
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -95,9 +101,14 @@ class _OrderState extends State<Order> {
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0,
-      leading: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Icon(Icons.arrow_back_ios, size: 20, color: Colors.black,),
+      leading: InkWell(
+        onTap: (){
+          Navigator.pop(context);
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Icon(Icons.arrow_back_ios, size: 20, color: Colors.black,),
+        ),
       ),
       title: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50),

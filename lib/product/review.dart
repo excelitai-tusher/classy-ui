@@ -20,7 +20,7 @@ class _ReviewState extends State<Review> {
           color: Colors.black,
         ),
         title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 70),
+          padding: const EdgeInsets.symmetric(horizontal: 50),
           child: Text("Write Review",
             style: TextStyle(
               color: Colors.black,
@@ -28,6 +28,15 @@ class _ReviewState extends State<Review> {
             ),
           ),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: Icon(Icons.cancel,
+              size: 18,
+              color: Colors.black,
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -186,25 +195,30 @@ class _ReviewState extends State<Review> {
               SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 60),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.orange,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                  onPressed: (){},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Submit your review",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
+                child: InkWell(
+                  onTap: (){
+                    //Navigator.push(context, MaterialPageRoute(builder: (context) => const OrderAccepted()));
+                  },
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.orange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                    ],
+                    ),
+                    onPressed: (){},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Submit your review",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

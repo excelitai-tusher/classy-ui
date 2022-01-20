@@ -1,9 +1,16 @@
 import 'package:classy_ui_design/address/residential%20address.dart';
+import 'package:classy_ui_design/order/order%20accepted.dart';
+import 'package:classy_ui_design/product/review.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
+
+import 'address/payment.dart';
+import 'address/shipping address.dart';
+import 'order/my order.dart';
 
 void main() {
   WidgetInspectorService.instance.performReassemble();
@@ -44,7 +51,7 @@ class MyApp1 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Google Maps Demo',
-      home: MapSample(),
+      home: Order(),
     );
   }
 }
@@ -91,19 +98,68 @@ class MapSampleState extends State<MapSample> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: GoogleMap(
-        mapType: MapType.normal,
-        markers: {
-          _kGooglePlexMarker,
-          _kLakeMarker,
-        },
-        polylines: {
-          _kPolyline,
-        },
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
+      body: Stack(
+        children: [
+          Container(
+            child:  GoogleMap(
+              mapType: MapType.normal,
+              markers: {
+                _kGooglePlexMarker,
+                _kLakeMarker,
+              },
+              polylines: {
+                _kPolyline,
+              },
+              initialCameraPosition: _kGooglePlex,
+              onMapCreated: (GoogleMapController controller) {
+                _controller.complete(controller);
+              },
+            ),
+          ),
+          Container(
+            height: 150,
+            width: MediaQuery.of(context).size.width,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 60,
+                    height: 40,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_back_ios, color: Colors.black,),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 60,
+                    height: 40,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(7))),
+                      child: IconButton(
+                        icon: Icon(FontAwesomeIcons.ellipsisV, color: Colors.black,),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: Container(
         height: 400,
@@ -136,12 +192,15 @@ class MapSampleState extends State<MapSample> {
                   fontSize: 12,
                 ),
               ),
-              SizedBox(height: 20,),
-              Text("Arrived in 5.32 pm",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12,
+              SizedBox(height: 15,),
+              RichText(
+                text: TextSpan(
+                  style: DefaultTextStyle.of(context).style,
+                  children: <TextSpan>[
+                    TextSpan(text: 'Arrived in ', style: TextStyle(color: Colors.grey, fontSize: 14),),
+                    TextSpan(text: '5.32', style: TextStyle(color: Colors.black, fontSize: 14),),
+                    TextSpan(text: ' p.m.', style: TextStyle(color: Colors.grey, fontSize: 14),),
+                  ],
                 ),
               ),
               SizedBox(height: 20,),
@@ -206,7 +265,9 @@ class MapSampleState extends State<MapSample> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    //Navigator.push(context, MaterialPageRoute(builder: (context) => const OrderAccepted()));
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -214,7 +275,7 @@ class MapSampleState extends State<MapSample> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 22,
+                          fontSize: 18,
                         ),
                       ),
                     ],
