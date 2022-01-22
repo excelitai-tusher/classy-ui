@@ -314,80 +314,80 @@ class _ShippingState extends State<Shipping> {
             ),
           ),
         ),
-        bottomNavigationBar: Container(
-          height: 70,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.grey,
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                child: Column(
-                  children: [
-                    Icon(
-                      (Icons.home_filled),
-                      color: Colors.grey,
-                    ),
-                    Text(
-                      "Home",
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                child: Column(
-                  children: [
-                    Icon(
-                      (Icons.favorite_border),
-                      color: Colors.grey,
-                    ),
-                    Text(
-                      "Wishlist",
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                child: Column(
-                  children: [
-                    Icon(
-                      (Icons.shopping_cart),
-                      color: Colors.orange,
-                    ),
-                    Text(
-                      "Cart",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                child: Column(
-                  children: [
-                    Icon(
-                      (Icons.people_sharp),
-                      color: Colors.grey,
-                    ),
-                    Text(
-                      "Account",
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+        // bottomNavigationBar: Container(
+        //   height: 70,
+        //   width: MediaQuery.of(context).size.width,
+        //   decoration: BoxDecoration(
+        //     border: Border.all(
+        //       color: Colors.grey,
+        //     ),
+        //   ),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //     children: [
+        //       Padding(
+        //         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+        //         child: Column(
+        //           children: [
+        //             Icon(
+        //               (Icons.home_filled),
+        //               color: Colors.grey,
+        //             ),
+        //             Text(
+        //               "Home",
+        //               style: TextStyle(color: Colors.grey, fontSize: 14),
+        //             ),
+        //           ],
+        //         ),
+        //       ),
+        //       Padding(
+        //         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+        //         child: Column(
+        //           children: [
+        //             Icon(
+        //               (Icons.favorite_border),
+        //               color: Colors.grey,
+        //             ),
+        //             Text(
+        //               "Wishlist",
+        //               style: TextStyle(color: Colors.grey, fontSize: 14),
+        //             ),
+        //           ],
+        //         ),
+        //       ),
+        //       Padding(
+        //         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+        //         child: Column(
+        //           children: [
+        //             Icon(
+        //               (Icons.shopping_cart),
+        //               color: Colors.orange,
+        //             ),
+        //             Text(
+        //               "Cart",
+        //               style: TextStyle(color: Colors.black, fontSize: 14),
+        //             ),
+        //           ],
+        //         ),
+        //       ),
+        //       Padding(
+        //         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+        //         child: Column(
+        //           children: [
+        //             Icon(
+        //               (Icons.people_sharp),
+        //               color: Colors.grey,
+        //             ),
+        //             Text(
+        //               "Account",
+        //               style: TextStyle(color: Colors.grey, fontSize: 14),
+        //             ),
+        //           ],
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
       );
     }
 }

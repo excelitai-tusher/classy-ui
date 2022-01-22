@@ -15,85 +15,85 @@ class _OrderState extends State<Order> {
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(),
-      bottomNavigationBar: Container(
-        height: 70,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.grey,
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: Column(
-                children: [
-                  Icon(
-                    (Icons.home_filled),
-                    color: Colors.grey,
-                  ),
-                  Text(
-                    "Home",
-                    style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: Column(
-                children: [
-                  Icon(
-                    (Icons.favorite_border),
-                    color: Colors.grey,
-                  ),
-                  Text(
-                    "Wishlist",
-                    style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>Shipping()));
-                },
-                child: Column(
-                  children: [
-                    Icon(
-                      (Icons.shopping_cart),
-                      color: Colors.orange,
-                    ),
-                    Text(
-                      "Cart",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: Column(
-                children: [
-                  Icon(
-                    (Icons.people_sharp),
-                    color: Colors.grey,
-                  ),
-                  Text(
-                    "Account",
-                    style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   height: 70,
+      //   width: MediaQuery.of(context).size.width,
+      //   decoration: BoxDecoration(
+      //     border: Border.all(
+      //       color: Colors.grey,
+      //     ),
+      //   ),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     children: [
+      //       Padding(
+      //         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+      //         child: Column(
+      //           children: [
+      //             Icon(
+      //               (Icons.home_filled),
+      //               color: Colors.grey,
+      //             ),
+      //             Text(
+      //               "Home",
+      //               style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+      //         child: Column(
+      //           children: [
+      //             Icon(
+      //               (Icons.favorite_border),
+      //               color: Colors.grey,
+      //             ),
+      //             Text(
+      //               "Wishlist",
+      //               style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+      //         child: InkWell(
+      //           onTap: (){
+      //             Navigator.push(context, MaterialPageRoute(builder: (context) =>Shipping()));
+      //           },
+      //           child: Column(
+      //             children: [
+      //               Icon(
+      //                 (Icons.shopping_cart),
+      //                 color: Colors.orange,
+      //               ),
+      //               Text(
+      //                 "Cart",
+      //                 style: TextStyle(color: Colors.black, fontSize: 14),
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+      //         child: Column(
+      //           children: [
+      //             Icon(
+      //               (Icons.people_sharp),
+      //               color: Colors.grey,
+      //             ),
+      //             Text(
+      //               "Account",
+      //               style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 
@@ -112,11 +112,16 @@ class _OrderState extends State<Order> {
       ),
       title: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50),
-        child: Text("My Order",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontFamily: 'Roboto-Regular.ttf'
+        child: InkWell(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) =>Shipping()));
+          },
+          child: Text("My Order",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+              fontFamily: 'Roboto-Regular.ttf'
+            ),
           ),
         ),
       ),
