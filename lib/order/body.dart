@@ -111,23 +111,23 @@ class _BodyState extends State<Body> {
                     children: [
                       Row(
                         children: [
-                          Text("Item name: ", style: TextStyle(color: Colors.black),
+                          Text("Item name: ", style: TextStyle(color: Colors.black, fontFamily: 'Roboto-Regular.ttf'),
                           ),
-                          Text(product.ItemName.toString(), style: TextStyle(color: Colors.black38)),
+                          Text(product.ItemName.toString(), style: TextStyle(color: Colors.black38, fontFamily: 'Roboto-Regular.ttf')),
                         ],
                       ),
                       Row(
                         children: [
-                          Text("Order No: ", style: TextStyle(color: Colors.black),
+                          Text("Order No: ", style: TextStyle(color: Colors.black, fontFamily: 'Roboto-Regular.ttf'),
                           ),
-                          Text(product.OrderNo.toString(), style: TextStyle(color: Colors.black38)),
+                          Text(product.OrderNo.toString(), style: TextStyle(color: Colors.black38, fontFamily: 'Roboto-Regular.ttf')),
                         ],
                       ),
                       Row(
                         children: [
-                          Text("Quantity: ", style: TextStyle(color: Colors.black),
+                          Text("Quantity: ", style: TextStyle(color: Colors.black, fontFamily: 'Roboto-Regular.ttf'),
                           ),
-                          Text(product.Quantity.toString(), style: TextStyle(color: Colors.black38)),
+                          Text(product.Quantity.toString(), style: TextStyle(color: Colors.black38, fontFamily: 'Roboto-Regular.ttf')),
                         ],
                       ),
                     ],
@@ -141,16 +141,16 @@ class _BodyState extends State<Body> {
                         Text(product.Date.toString()),
                         Row(
                           children: [
-                            Text("Total Amount: ", style: TextStyle(color: Colors.black),
+                            Text("Total Amount: ", style: TextStyle(color: Colors.black, fontFamily: 'Roboto-Regular.ttf'),
                             ),
-                            Text(product.TotalAmount.toString(), style: TextStyle(color: Colors.black38)),
+                            Text(product.TotalAmount.toString(), style: TextStyle(color: Colors.black38, fontFamily: 'Roboto-Regular.ttf')),
                           ],
                         ),
                         Row(
                           children: [
-                            Text("Status: ", style: TextStyle(color: Colors.black),
+                            Text("Status: ", style: TextStyle(color: Colors.black, fontFamily: 'Roboto-Regular.ttf'),
                             ),
-                            Text(product.Status.toString(), style: TextStyle(color: Colors.green)),
+                            Text(product.Status.toString(), style: TextStyle(color: Colors.green, fontFamily: 'Roboto-Regular.ttf')),
                           ],
                         ),
                       ],
@@ -195,6 +195,7 @@ class _BodyState extends State<Body> {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
+                          fontFamily: 'Roboto-Regular.ttf'
                         ),
                       ),
                     ),
@@ -211,10 +212,11 @@ class _BodyState extends State<Body> {
                         primary: Colors.white,
                       ),
                       onPressed: (){},
-                      child: Text("Tommorow",
+                      child: Text("Tomorrow",
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 15,
+                          fontFamily: 'Roboto-Regular.ttf'
                         ),
                       ),
                     ),
@@ -235,6 +237,7 @@ class _BodyState extends State<Body> {
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 15,
+                          fontFamily: 'Roboto-Regular.ttf'
                         ),
                       ),
                     ),
@@ -249,6 +252,7 @@ class _BodyState extends State<Body> {
                       fontSize: 20,
                       color: Colors.orange,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto-Regular.ttf'
                     ),
                   ),
                 ],
@@ -264,6 +268,7 @@ class _BodyState extends State<Body> {
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
+                        fontFamily: 'Roboto-Regular.ttf'
                       ),
                     ),
                     SizedBox(height: 5,),
@@ -274,6 +279,7 @@ class _BodyState extends State<Body> {
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
+                            fontFamily: 'Roboto-Regular.ttf'
                           ),
                         ),
                         SizedBox(height: 5,),
@@ -284,6 +290,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 16,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                             //SizedBox(width: 10,),
@@ -291,6 +298,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                           ],
@@ -303,6 +311,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                             SizedBox(width: 10,),
@@ -310,6 +319,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                           ],
@@ -332,6 +342,7 @@ class _BodyState extends State<Body> {
                       fontSize: 20,
                       color: Colors.orange,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto-Regular.ttf'
                     ),
                   ),
                 ],
@@ -347,6 +358,7 @@ class _BodyState extends State<Body> {
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
+                        fontFamily: 'Roboto-Regular.ttf'
                       ),
                     ),
                     SizedBox(height: 5,),
@@ -357,6 +369,7 @@ class _BodyState extends State<Body> {
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
+                            fontFamily: 'Roboto-Regular.ttf'
                           ),
                         ),
                         SizedBox(height: 5,),
@@ -367,6 +380,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 16,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                             SizedBox(width: 10,),
@@ -374,6 +388,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                           ],
@@ -386,6 +401,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                             SizedBox(width: 10,),
@@ -393,6 +409,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                           ],
@@ -415,6 +432,7 @@ class _BodyState extends State<Body> {
                       fontSize: 20,
                       color: Colors.orange,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto-Regular.ttf'
                     ),
                   ),
                 ],
@@ -430,6 +448,7 @@ class _BodyState extends State<Body> {
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
+                        fontFamily: 'Roboto-Regular.ttf'
                       ),
                     ),
                     SizedBox(height: 5,),
@@ -440,6 +459,7 @@ class _BodyState extends State<Body> {
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
+                            fontFamily: 'Roboto-Regular.ttf'
                           ),
                         ),
                         SizedBox(height: 5,),
@@ -450,6 +470,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 16,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                             SizedBox(width: 10,),
@@ -457,6 +478,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                           ],
@@ -469,6 +491,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                             SizedBox(width: 10,),
@@ -476,6 +499,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                           ],
@@ -512,7 +536,13 @@ class _BodyState extends State<Body> {
             Container(
               child: Column(
                 children: [
-                  Text("This order will no longer be visible in your"),
+                  Text("This order will no longer be visible in your",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Roboto-Regular.ttf'
+                  ),
+                  ),
                 ],
               ),
             ),
@@ -522,7 +552,13 @@ class _BodyState extends State<Body> {
                 padding: const EdgeInsets.symmetric(horizontal: 70),
                 child: Column(
                   children: [
-                    Text("cart."),
+                    Text("cart.",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto-Regular.ttf'
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -559,6 +595,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                             SizedBox(height: 20,),
@@ -567,6 +604,7 @@ class _BodyState extends State<Body> {
                                 color: Colors.black38,
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                           ],
@@ -592,7 +630,12 @@ class _BodyState extends State<Body> {
                                   }),
                                   icon: Icon(Icons.add_box, color: Colors.grey,),
                                 ),
-                                Text("01"),
+                                Text("01",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Roboto-Regular.ttf'
+                                  ),
+                                ),
                                 //Text(_itemCount.toString()),
                                 IconButton(
                                   onPressed: ()=> setState(() {
@@ -642,6 +685,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                             SizedBox(height: 20,),
@@ -650,6 +694,7 @@ class _BodyState extends State<Body> {
                                 color: Colors.black38,
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                           ],
@@ -675,7 +720,12 @@ class _BodyState extends State<Body> {
                                   }),
                                   icon: Icon(Icons.add_box, color: Colors.grey,),
                                 ),
-                                Text("01"),
+                                Text("01",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Roboto-Regular.ttf'
+                                  ),
+                                ),
                                 //Text(_itemCount.toString()),
                                 IconButton(
                                   onPressed: ()=> setState(() {
@@ -725,6 +775,7 @@ class _BodyState extends State<Body> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                             SizedBox(height: 20,),
@@ -733,6 +784,7 @@ class _BodyState extends State<Body> {
                                 color: Colors.black38,
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
+                                fontFamily: 'Roboto-Regular.ttf'
                               ),
                             ),
                           ],
@@ -758,7 +810,12 @@ class _BodyState extends State<Body> {
                                   }),
                                   icon: Icon(Icons.add_box, color: Colors.grey,),
                                 ),
-                                Text("01"),
+                                Text("01",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Roboto-Regular.ttf'
+                                  ),
+                                ),
                                 //Text(_itemCount.toString()),
                                 IconButton(
                                   onPressed: ()=> setState(() {

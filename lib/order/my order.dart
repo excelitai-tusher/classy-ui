@@ -36,7 +36,7 @@ class _OrderState extends State<Order> {
                   ),
                   Text(
                     "Home",
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),
                   ),
                 ],
               ),
@@ -51,7 +51,7 @@ class _OrderState extends State<Order> {
                   ),
                   Text(
                     "Wishlist",
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),
                   ),
                 ],
               ),
@@ -86,7 +86,7 @@ class _OrderState extends State<Order> {
                   ),
                   Text(
                     "Account",
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),
                   ),
                 ],
               ),
@@ -116,6 +116,7 @@ class _OrderState extends State<Order> {
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
+            fontFamily: 'Roboto-Regular.ttf'
           ),
         ),
       ),

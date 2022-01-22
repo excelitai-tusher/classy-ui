@@ -65,118 +65,123 @@ class _ResidentialState extends State<Residential> {
             style: TextStyle(
               color: Colors.black,
               fontSize: 18,
+              fontFamily: 'Roboto-Regular.ttf'
             ),
           ),
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
-        child: Column(
-          children: [
-            Text("Please Enter Your Current Address",
-            style: TextStyle(
-              color: Colors.grey,
-              fontWeight: FontWeight.bold,
-              fontSize: 18
-            ),
-            ),
-            SizedBox(height: 30,),
-            TextField(
-              decoration: InputDecoration(
-                focusColor: Colors.grey,
-                fillColor: Colors.grey,
-                hoverColor: Colors.grey,
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey, width: 2.0),
-                ),
-                hintText: 'Street address & city',
-                hintStyle: TextStyle(fontSize: 12.0, color: Colors.grey),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text("Please Enter Your Current Address",
+              style: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                fontFamily: 'Roboto-Regular.ttf'
               ),
-            ),
-            SizedBox(height: 20,),
-            TextField(
-              decoration: InputDecoration(
-                focusColor: Colors.grey,
-                fillColor: Colors.grey,
-                hoverColor: Colors.grey,
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey, width: 2.0),
-                ),
-                hintText: 'Apt, suite #',
-                hintStyle: TextStyle(fontSize: 12.0, color: Colors.grey),
               ),
-            ),
-            SizedBox(height: 20,),
-            TextField(
-              decoration: InputDecoration(
-                focusColor: Colors.grey,
-                fillColor: Colors.grey,
-                hoverColor: Colors.grey,
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey, width: 2.0),
-                ),
-                hintText: 'Post Code',
-                hintStyle: TextStyle(fontSize: 12.0, color: Colors.grey),
-              ),
-            ),
-            SizedBox(height: 35,),
-            Column(
-              children: [
-                SizedBox(
-                  height: 300,
-                  width: 300,
-                  child: GoogleMap(
-                    mapType: MapType.normal,
-                    markers: {
-                      _kGooglePlexMarker,
-                      _kLakeMarker,
-                    },
-                    polylines: {
-                      _kPolyline,
-                    },
-                    initialCameraPosition: _kGooglePlex,
-                    onMapCreated: (GoogleMapController controller) {
-                      _controller.complete(controller);
-                    },
+              SizedBox(height: 30,),
+              TextField(
+                decoration: InputDecoration(
+                  focusColor: Colors.grey,
+                  fillColor: Colors.grey,
+                  hoverColor: Colors.grey,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
                   ),
+                  hintText: 'Street address & city',
+                  hintStyle: TextStyle(fontSize: 12.0, color: Colors.grey, fontFamily: 'Roboto-Regular.ttf'),
                 ),
-              ],
-            ),
-
-            SizedBox(
-              width: 200,
-              child: Column(
+              ),
+              SizedBox(height: 20,),
+              TextField(
+                decoration: InputDecoration(
+                  focusColor: Colors.grey,
+                  fillColor: Colors.grey,
+                  hoverColor: Colors.grey,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                  ),
+                  hintText: 'Apt, suite #',
+                  hintStyle: TextStyle(fontSize: 12.0, color: Colors.grey, fontFamily: 'Roboto-Regular.ttf'),
+                ),
+              ),
+              SizedBox(height: 20,),
+              TextField(
+                decoration: InputDecoration(
+                  focusColor: Colors.grey,
+                  fillColor: Colors.grey,
+                  hoverColor: Colors.grey,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                  ),
+                  hintText: 'Post Code',
+                  hintStyle: TextStyle(fontSize: 12.0, color: Colors.grey, fontFamily: 'Roboto-Regular.ttf'),
+                ),
+              ),
+              SizedBox(height: 35,),
+              Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 30),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.orange,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                      ),
-                      onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const OrderAccepted()));
+                  SizedBox(
+                    height: 300,
+                    width: 300,
+                    child: GoogleMap(
+                      mapType: MapType.normal,
+                      markers: {
+                        _kGooglePlexMarker,
+                        _kLakeMarker,
                       },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Save Address",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ],
-                      ),
+                      polylines: {
+                        _kPolyline,
+                      },
+                      initialCameraPosition: _kGooglePlex,
+                      onMapCreated: (GoogleMapController controller) {
+                        _controller.complete(controller);
+                      },
                     ),
                   ),
                 ],
               ),
-            ),
-          ],
+
+              SizedBox(
+                width: 200,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 30),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const OrderAccepted()));
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Save Address",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                                fontFamily: 'Roboto-Regular.ttf'
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

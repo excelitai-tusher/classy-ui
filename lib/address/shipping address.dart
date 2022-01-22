@@ -33,12 +33,14 @@ class _ShippingState extends State<Shipping> {
             style: TextStyle(
               color: Colors.black,
               fontSize: 18,
+              fontFamily: 'Roboto-Regular.ttf'
             ),
           ),
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 25),
           child: SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -47,6 +49,7 @@ class _ShippingState extends State<Shipping> {
                       fontSize: 18,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto-Regular.ttf'
                     ),
                   ),
                   SizedBox(height: 10,),
@@ -69,6 +72,7 @@ class _ShippingState extends State<Shipping> {
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 12,
+                              fontFamily: 'Roboto-Regular.ttf'
                             ),
                           ),
                         ),
@@ -95,6 +99,7 @@ class _ShippingState extends State<Shipping> {
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 12,
+                              fontFamily: 'Roboto-Regular.ttf'
                             ),
                           ),
                         ),
@@ -141,12 +146,15 @@ class _ShippingState extends State<Shipping> {
                           text: TextSpan(children: <TextSpan>[
                             TextSpan(
                                 text: "Order No: ",
-                                style: TextStyle(color: Colors.black)),
+                                style: TextStyle(color: Colors.black, fontFamily: 'Roboto-Regular.ttf')),
                             TextSpan(
                                 text: "7597",
                                 style: TextStyle(
                                     color: Colors.grey,
-                                    fontWeight: FontWeight.bold)),
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Roboto-Regular.ttf'
+                                ),
+                             ),
                            ],
                           ),
                         ),
@@ -155,12 +163,15 @@ class _ShippingState extends State<Shipping> {
                           text: TextSpan(children: <TextSpan>[
                             TextSpan(
                                 text: "Price: ",
-                                style: TextStyle(color: Colors.black)),
+                                style: TextStyle(color: Colors.black, fontFamily: 'Roboto-Regular.ttf')),
                             TextSpan(
                                 text: "TK2103",
                                 style: TextStyle(
                                     color: Colors.grey,
-                                    fontWeight: FontWeight.bold)),
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Roboto-Regular.ttf'
+                                ),
+                            ),
                           ],
                           ),
                         ),
@@ -193,10 +204,10 @@ class _ShippingState extends State<Shipping> {
                                     text: TextSpan(children: <TextSpan>[
                                       TextSpan(
                                           text: "Your delivery time \n",
-                                          style: TextStyle(color: Colors.grey)),
+                                          style: TextStyle(color: Colors.grey, fontFamily: 'Roboto-Regular.ttf')),
                                       TextSpan(
                                           text: "30 Minutes ",
-                                          style: TextStyle(color: Colors.black)),
+                                          style: TextStyle(color: Colors.black, fontFamily: 'Roboto-Regular.ttf')),
                                     ],
                                     ),
                                   ),

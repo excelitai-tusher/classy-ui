@@ -65,6 +65,7 @@ class _PaymentState extends State<Payment> {
             style: TextStyle(
               color: Colors.black,
               fontSize: 18,
+              fontFamily: 'Roboto-Regular.ttf'
             ),
           ),
         ),
@@ -82,6 +83,7 @@ class _PaymentState extends State<Payment> {
                     color: Colors.grey,
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
+                    fontFamily: 'Roboto-Regular.ttf'
                   ),
                 ),
                 IconButton(
@@ -135,6 +137,7 @@ class _PaymentState extends State<Payment> {
                     color: Colors.grey,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Roboto-Regular.ttf'
                    ),
                   ),
                   SizedBox(height: 20,),
@@ -143,6 +146,7 @@ class _PaymentState extends State<Payment> {
                       color: Colors.grey,
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto-Regular.ttf'
                     ),
                   ),
                 ],
@@ -162,7 +166,8 @@ class _PaymentState extends State<Payment> {
                 style: TextStyle(
                   color: Colors.black38,
                   fontWeight: FontWeight.bold,
-                  fontSize: 18
+                  fontSize: 18,
+                  fontFamily: 'Roboto-Regular.ttf'
                  ),
                 ),
                 SizedBox(width: 20),
@@ -182,6 +187,7 @@ class _PaymentState extends State<Payment> {
                   color: Colors.grey,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto-Regular.ttf'
                 ),
                 ),
               ],
@@ -270,6 +276,7 @@ class _PaymentState extends State<Payment> {
                   color: Colors.grey,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
+                  fontFamily: 'Roboto-Regular.ttf'
                 ),
                 ),
                 Text("\$45000.0",
@@ -277,6 +284,7 @@ class _PaymentState extends State<Payment> {
                     color: Colors.grey,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
+                    fontFamily: 'Roboto-Regular.ttf'
                   ),
                 ),
               ],
@@ -306,6 +314,7 @@ class _PaymentState extends State<Payment> {
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 22,
+                            fontFamily: 'Roboto-Regular.ttf'
                           ),
                         ),
                       ],

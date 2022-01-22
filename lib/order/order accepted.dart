@@ -29,6 +29,7 @@ class _OrderAcceptedState extends State<OrderAccepted> {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
             child: SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -56,6 +57,7 @@ class _OrderAcceptedState extends State<OrderAccepted> {
                           color: Colors.white,
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto-Regular.ttf'
                         ),
                         ),
                         SizedBox(height: 10,),
@@ -64,9 +66,10 @@ class _OrderAcceptedState extends State<OrderAccepted> {
                             color: Colors.white,
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
+                            fontFamily: 'Roboto-Regular.ttf'
                           ),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 5),
                         Image(image: AssetImage("images/Vector.png",)),
                       ],
                     ),
@@ -93,6 +96,7 @@ class _OrderAcceptedState extends State<OrderAccepted> {
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
+                fontFamily: 'Roboto-Regular.ttf'
                ),
               ),
                 Text("your order in 30 mins later",
@@ -100,6 +104,7 @@ class _OrderAcceptedState extends State<OrderAccepted> {
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
+                fontFamily: 'Roboto-Regular.ttf'
               ),
              ),
               SizedBox(height: 20,),
@@ -121,6 +126,7 @@ class _OrderAcceptedState extends State<OrderAccepted> {
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 22,
+                        fontFamily: 'Roboto-Regular.ttf'
                       ),
                     ),
                   ],

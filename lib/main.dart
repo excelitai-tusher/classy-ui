@@ -7,7 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'address/payment.dart';
 import 'address/shipping address.dart';
 import 'order/my order.dart';
@@ -182,6 +182,7 @@ class MapSampleState extends State<MapSample> {
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
+                  fontFamily: 'Roboto-Regular.ttf'
                 ),
               ),
               SizedBox(height: 10,),
@@ -190,6 +191,7 @@ class MapSampleState extends State<MapSample> {
                   color: Colors.orange,
                   fontWeight: FontWeight.bold,
                   fontSize: 12,
+                  fontFamily: 'Roboto-Regular.ttf'
                 ),
               ),
               SizedBox(height: 15,),
@@ -197,9 +199,9 @@ class MapSampleState extends State<MapSample> {
                 text: TextSpan(
                   style: DefaultTextStyle.of(context).style,
                   children: <TextSpan>[
-                    TextSpan(text: 'Arrived in ', style: TextStyle(color: Colors.grey, fontSize: 14),),
-                    TextSpan(text: '5.32', style: TextStyle(color: Colors.black, fontSize: 14),),
-                    TextSpan(text: ' p.m.', style: TextStyle(color: Colors.grey, fontSize: 14),),
+                    TextSpan(text: 'Arrived in ', style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),),
+                    TextSpan(text: '5.32', style: TextStyle(color: Colors.black, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),),
+                    TextSpan(text: ' p.m.', style: TextStyle(color: Colors.grey, fontSize: 14, fontFamily: 'Roboto-Regular.ttf'),),
                   ],
                 ),
               ),
@@ -225,6 +227,7 @@ class MapSampleState extends State<MapSample> {
                           color: Colors.grey,
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
+                          fontFamily: 'Roboto-Regular.ttf'
                         ),
                       ),
                     ],
@@ -248,6 +251,7 @@ class MapSampleState extends State<MapSample> {
                           color: Colors.grey,
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
+                          fontFamily: 'Roboto-Regular.ttf'
                         ),
                       ),
                     ],
@@ -276,6 +280,7 @@ class MapSampleState extends State<MapSample> {
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
+                          fontFamily: 'Roboto-Regular.ttf'
                         ),
                       ),
                     ],
